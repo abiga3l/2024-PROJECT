@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOGIN</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <div class="content">
+        <header>Login</header>
+        <div class="form-content">
+        <form action="login.php" method="post">
+            <label for="FullName">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+            <br><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="emailAddress" required>
+            <br><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required> 
+            <div class="checkbox-label">
+                <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
+                <label for="showPasswordCheckbox">Show Password</label>
+            </div>
+            <br><br>
+            <button type="submit">Login</button>
+        </form>
+        <a href="register.html" target="#">Create an account</a>
+        <a href="forgotpassword.html" target="#">Forgot Password?</a>
+        </div>
+    </div>
+            <script>
+            function togglePasswordVisibility() {
+                 var passwordField = document.getElementById("password");
+                 if (document.getElementById("showPasswordCheckbox").checked) {
+                    passwordField.type="text";
+                 } else {
+                    passwordField.type="password";
+                 }
+            }
+            </script>       
+    </body>
+</html>

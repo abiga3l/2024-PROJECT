@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mood Tracker</title>
+      <link rel="stylesheet" href="mood.css">
+    </head>
+    <body>
+        <header>Hey!Hope you are well today!</header>
+        <div class="container">
+            <h1>Mood Tracker</h1>
+            <form id="moodForm" action="mood.php" method="post">
+                <label for="mood">How are you feeling today?</label>
+                <select id="mood" name="mood" required>
+                    <option value="Happy">Happy</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Anxious">Anxious</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Not sure">Not sure</option>
+                </select>
+                <label for="notes">Notes</label>
+                <textarea id="notes" name="notes" placeholder="Describe your day...."></textarea>
+                <input type="hidden" id="date" name="date">
+                <button type="submit">Submit</button>
+            </form>
+        
+        <div class="graph">
+            <canvas id="moodgraph"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="mood.js"></script>
+    </body>
+</html>

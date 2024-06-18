@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JOURNALING</title>
+        <link rel="stylesheet" href="journal.css">
+    </head>
+      <body>
+<section id="journaling">
+    <h1>Jornaling</h1>
+    <p>Let's Journal.Only for you</p>
+    <form id="journal-form" method="post" action="journal.php">
+    <textarea id="journal-entry" name="entry" placeholder="Write your emotions here..." rows="10" cols="150">
+    </textarea>
+    <br>
+    <button type="submit">Save Entry</button>
+      <br><br>
+    <a href="journal_view.php" class="view-entries">View Previous Entries</a>
+</form>
+</section>
+<script>
+document.getElementById('journal-form').onsubmit = function(event) {
+    event.preventDefault();
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST','journal.php',true);
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && xhr.status === 200){
+            alert(xhr.responseText);
+        if(xhr.responseText === 'Entry saved successfully!') {
+            document.getElementById('journal-entry') .value='';
+        }
+    }
+};
+  var entry = document.getElementById('journal-entry').values;
+  xhr.send('entry='+encodeURIComponent(entry));
+};
+</script>
+</body>
+</html>
