@@ -34,6 +34,9 @@ The rest of the files give all the explanations needed.
 
 This README file uses GitHub Flavored Markdown to format the text and make it easier to read.
 
+##NOTE
+My project is saved in XAMPP's folder ht doca
+
 ## URL
 
 The URL for this README file is http://localhost/FINALS/.
